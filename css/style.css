@@ -20,15 +20,15 @@ body {
   line-height: 1.7;
   color: #777;
   padding: 30px;
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 83%, 0 100%);
 }
 
 .header-main {
   height: 95vh;
   background-image: linear-gradient(
       to right bottom,
-      rgba(44, 243, 157, 0.8),
-      rgba(200, 248, 191, 0.808)
+      rgba(189, 243, 250, 0.884),
+      rgba(16, 123, 245, 0.808)
     ),
     url(../img/kid-enjoying.jpeg);
   background-size: cover;
@@ -47,33 +47,151 @@ body {
 }
 
 .logo {
-  height: 50px;
+  height: 60px;
+}
+.logo:hover {
+  animation: moveInRight 1s ease-out;
 }
 
 .text-main-center {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 55%;
+  transform: translate(-55%, -50%);
+  text-align: center;
 }
 
-/* position absolute */
+/* "text-align" will center the button 'donate' to the center of the text, treat the button as text */
+
+/* position absolute   */
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 60px;
 }
+/* "margin-bottom" is for the space between the text block and the button  */
 
 /* span is a inline element  */
 .heading-main {
   display: block;
-  font-size: 60px;
+  font-size: 50px;
   font-weight: 400px;
   letter-spacing: 35px;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
 }
+
+/* animation-delay: 3s; */
+/* animation-iteration-count: 3; */
 
 .heading-main-sub {
   display: block;
   font-size: 20px;
   font-weight: 700px;
   letter-spacing: 17.4px;
+  animation: moveInRight 1s ease-out;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  /* rotate(-70deg);   -- effect rotates image*/
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  80% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+/* Botton animation  */
+
+@keyframes moveInBotton {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 200px;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all.4s;
+}
+
+/* :btn-white" it's a state , style special */
+.btn-white::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animation {
+  animation: moveInBotton 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards;
 }
