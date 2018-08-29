@@ -17,7 +17,7 @@ html {
   font-size: 62.5%;
 }
 
-/* changing PX to REM, 1 rem = 10 px( rem uses the root font size) */
+/* changing PX to REM, 1 rem = 10 px( rem uses the root font size)  divede  the desire percentage by 16 */
 
 body {
   font-family: "Lato", sans-serif;
@@ -63,8 +63,8 @@ body {
 
 .text-main-center {
   position: absolute;
-  top: 50%;
-  left: 55%;
+  top: 40%;
+  left: 50%;
   transform: translate(-55%, -50%);
   text-align: center;
 }
@@ -84,9 +84,9 @@ body {
 /* span is a inline element  */
 .heading-main {
   display: block;
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 400;
-  letter-spacing: 3.5rem;
+  letter-spacing: 2rem;
   animation-name: moveInLeft;
   animation-duration: 1s;
   animation-timing-function: ease-out;
