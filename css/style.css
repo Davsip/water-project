@@ -206,3 +206,14 @@ body {
   animation: moveInBotton 0.5s ease-out 0.75s;
   animation-fill-mode: backwards;
 }
+
+.copyrightSection {
+  background-color: #fff;
+  color: #777;
+  padding: 30px 5px;
+  width: 100%;
+}
+
+.copyrightSection p {
+  margin: 0;
+}
