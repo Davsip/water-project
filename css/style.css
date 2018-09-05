@@ -2,9 +2,10 @@
 COLORS:
 Light green: #7ed56f
 Medium green: #55c57a
+#bdf3fa light blue- we use
+#107bf5 dark blue - we use 
 Dark green: #28b485
 */
-
 *,
 *::after,
 *::before {
@@ -12,15 +13,14 @@ Dark green: #28b485
   padding: 0;
   box-sizing: inherit;
 }
+
 /* border box: */
 /* universal selector */
-
 html {
   font-size: 62.5%;
 }
 
 /* changing PX to REM, 1 rem = 10 px( rem uses the root font size)  divede  the desire percentage by 16 */
-
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
@@ -28,7 +28,6 @@ body {
   line-height: 1.7;
   color: #777;
   padding: 2rem;
-
   box-sizing: border-box;
 }
 
@@ -45,11 +44,11 @@ body {
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 83%, 0 100%);
 }
+
 /* "top" ensure that the top of the image stays on any viewport size */
 /* "cover" fits the image on any viewport size of the screen  */
 /* vh : hundredths of the viewport height. */
 /* " position relative" is the position reference for the "main-logo and logo" */
-
 .header__main-logo {
   position: absolute;
   top: 4rem;
@@ -59,10 +58,10 @@ body {
 .header__logo {
   height: 3.5rem;
 }
+
 /* .logo:hover {
   animation: moveInRight 1s ease-out;
 } */
-
 .header__text-main-center {
   position: absolute;
   top: 40%;
@@ -72,17 +71,15 @@ body {
 }
 
 /* "text-align" will center the button 'donate' to the center of the text, treat the button as text */
-
 /* position absolute   */
-
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
   backface-visibility: hidden;
   margin-bottom: 6rem;
 }
-/* "margin-bottom" is for the space between the text block and the button  */
 
+/* "margin-bottom" is for the space between the text block and the button  */
 /* span is a inline element  */
 .heading--main {
   display: block;
@@ -96,7 +93,6 @@ body {
 
 /* animation-delay: 3s; */
 /* animation-iteration-count: 3; */
-
 .heading--main-sub {
   display: block;
   font-size: 2rem;
@@ -111,11 +107,9 @@ body {
     transform: translateX(-10rem);
   }
   /* rotate(-70deg);   -- effect rotates image*/
-
   80% {
     transform: translateX(1rem);
   }
-
   100% {
     opacity: 1;
     transform: translate(0);
@@ -127,11 +121,9 @@ body {
     opacity: 0;
     transform: translateX(10rem);
   }
-
   80% {
     transform: translateX(-1rem);
   }
-
   100% {
     opacity: 1;
     transform: translate(0);
@@ -139,13 +131,11 @@ body {
 }
 
 /* Botton animation  */
-
 @keyframes moveInBotton {
   0% {
     opacity: 0;
     transform: translateY(3rem);
   }
-
   100% {
     opacity: 1;
     transform: translate(0);
@@ -191,7 +181,7 @@ body {
   top: 0;
   left: 0;
   z-index: -1;
-  transition: all.4s;
+  transition: all 0.4s;
 }
 
 /* :btn-white" it's a state , style special */

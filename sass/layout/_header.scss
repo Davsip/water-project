@@ -1,0 +1,70 @@
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.884),
+      rgba($color-primary-dark, 0.808)
+    ),
+    url(../img/kid-enjoying.jpeg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 83%, 0 100%);
+
+  &__main-logo {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+
+  &__logo {
+    height: 3.5rem;
+  }
+  /* .logo:hover {
+      animation: moveInRight 1s ease-out;
+    } */
+
+  &__text-main-center {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-55%, -50%);
+    text-align: center;
+  }
+}
+/* "top" ensure that the top of the image stays on any viewport size */
+/* "cover" fits the image on any viewport size of the screen  */
+/* vh : hundredths of the viewport height. */
+/* " position relative" is the position reference for the "main-logo and logo" */
+
+/* "text-align" will center the button 'donate' to the center of the text, treat the button as text */
+
+/* position absolute   */
+
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
+
+  &--main {
+    display: block;
+    font-size: 4rem;
+    font-weight: 400;
+    letter-spacing: 2rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+  }
+
+  /* animation-delay: 3s; */
+  /* animation-iteration-count: 3; */
+
+  &--main-sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-out;
+  }
+}
