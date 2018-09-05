@@ -1,0 +1,22 @@
+{
+  "name": "water-project",
+  "version": "1.0.0",
+  "description": "Water",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Davsip/water-project.git"
+  },
+  "author": "David Sipala",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Davsip/water-project/issues"
+  },
+  "homepage": "https://github.com/Davsip/water-project#readme",
+  "devDependencies": {
+    "node-sass": "^4.9.3"
+  }
+}

@@ -5,8 +5,10 @@ Medium green: #55c57a
 Dark green: #28b485
 */
 
-* {
-  margin: 0px;
+*,
+*::after,
+*::before {
+  margin: 0;
   padding: 0;
   box-sizing: inherit;
 }
@@ -30,7 +32,7 @@ body {
   box-sizing: border-box;
 }
 
-.header-main {
+.header {
   height: 95vh;
   background-image: linear-gradient(
       to right bottom,
@@ -48,20 +50,20 @@ body {
 /* vh : hundredths of the viewport height. */
 /* " position relative" is the position reference for the "main-logo and logo" */
 
-.main-logo {
+.header__main-logo {
   position: absolute;
   top: 4rem;
   left: 4rem;
 }
 
-.logo {
+.header__logo {
   height: 3.5rem;
 }
-.logo:hover {
+/* .logo:hover {
   animation: moveInRight 1s ease-out;
-}
+} */
 
-.text-main-center {
+.header__text-main-center {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -82,7 +84,7 @@ body {
 /* "margin-bottom" is for the space between the text block and the button  */
 
 /* span is a inline element  */
-.heading-main {
+.heading--main {
   display: block;
   font-size: 4rem;
   font-weight: 400;
@@ -95,7 +97,7 @@ body {
 /* animation-delay: 3s; */
 /* animation-iteration-count: 3; */
 
-.heading-main-sub {
+.heading--main-sub {
   display: block;
   font-size: 2rem;
   font-weight: 700;
@@ -174,7 +176,7 @@ body {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
-.btn-white {
+.btn--white {
   background-color: #fff;
   color: #777;
 }
@@ -193,7 +195,7 @@ body {
 }
 
 /* :btn-white" it's a state , style special */
-.btn-white::after {
+.btn--white::after {
   background-color: #fff;
 }
 
@@ -202,9 +204,13 @@ body {
   opacity: 0;
 }
 
-.btn-animation {
+.btn--animation {
   animation: moveInBotton 0.5s ease-out 0.75s;
   animation-fill-mode: backwards;
+}
+
+.section-2 {
+  height: 95vh;
 }
 
 .copyrightSection {
