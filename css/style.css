@@ -1,26 +1,61 @@
-/*
-COLORS:
-Light green: #7ed56f
-Medium green: #55c57a
-#bdf3fa light blue- we use
-#107bf5 dark blue - we use 
-Dark green: #28b485
-*/
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  /* rotate(-70deg);   -- effect rotates image*/
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+/* Botton animation  */
+@keyframes moveInBotton {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
-}
+  box-sizing: inherit; }
 
 /* border box: */
 /* universal selector */
 html {
-  font-size: 62.5%;
-}
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box; }
 
 /* changing PX to REM, 1 rem = 10 px( rem uses the root font size)  divede  the desire percentage by 16 */
+.u-center-text {
+  text-align: center; }
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem; }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem; }
+
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
@@ -28,148 +63,93 @@ body {
   line-height: 1.7;
   color: #777;
   padding: 2rem;
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
-.header {
-  height: 95vh;
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(189, 243, 250, 0.884),
-      rgba(16, 123, 245, 0.808)
-    ),
-    url(../img/kid-enjoying.jpeg);
-  background-size: cover;
-  background-position: top;
-  position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 83%, 0 100%);
-}
-
-/* "top" ensure that the top of the image stays on any viewport size */
-/* "cover" fits the image on any viewport size of the screen  */
-/* vh : hundredths of the viewport height. */
-/* " position relative" is the position reference for the "main-logo and logo" */
-.header__main-logo {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
-
-.header__logo {
-  height: 3.5rem;
-}
-
-/* .logo:hover {
-  animation: moveInRight 1s ease-out;
-} */
-.header__text-main-center {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-55%, -50%);
-  text-align: center;
-}
-
-/* "text-align" will center the button 'donate' to the center of the text, treat the button as text */
-/* position absolute   */
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
   backface-visibility: hidden;
   margin-bottom: 6rem;
-}
+  /* animation-delay: 3s; */
+  /* animation-iteration-count: 3; */ }
+  .heading-primary--main {
+    display: block;
+    font-size: 4rem;
+    font-weight: 400;
+    letter-spacing: 2rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out; }
+  .heading-primary--main-sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-out; }
 
-/* "margin-bottom" is for the space between the text block and the button  */
-/* span is a inline element  */
-.heading--main {
-  display: block;
-  font-size: 4rem;
-  font-weight: 400;
-  letter-spacing: 2rem;
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-}
-
-/* animation-delay: 3s; */
-/* animation-iteration-count: 3; */
-.heading--main-sub {
-  display: block;
-  font-size: 2rem;
+.heading-secondary {
+  font-size: 3rem;
+  text-transform: uppercase;
   font-weight: 700;
-  letter-spacing: 1.75rem;
-  animation: moveInRight 1s ease-out;
-}
+  display: inline-block;
+  color: lightslategray;
+  letter-spacing: 0.1rem;
+  transition: all 0.2s; }
+  .heading-secondary:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
 
-@keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem);
-  }
-  /* rotate(-70deg);   -- effect rotates image*/
-  80% {
-    transform: translateX(1rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase; }
 
-@keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(10rem);
-  }
-  80% {
-    transform: translateX(-1rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
+.paragraph {
+  font-size: 1.5rem; }
+  .paragraph:not(:last-child) {
+    margin-bottom: 3rem; }
 
-/* Botton animation  */
-@keyframes moveInBotton {
-  0% {
-    opacity: 0;
-    transform: translateY(3rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
+.u-center-text {
+  text-align: center; }
 
-.btn:link,
-.btn:visited {
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem; }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem; }
+
+.btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
   display: inline-block;
   /* changed to 10rem (border-radius: 200px;)
-   */
+     */
   border-radius: 20rem;
   transition: all 0.2s;
   position: relative;
-  font-size: 1.6rem;
-}
+  font-size: 1.6rem; }
 
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-}
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
 
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-}
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
 .btn--white {
   background-color: #fff;
   color: #777;
-}
+  /* :btn-white" it's a state , style special */ }
+  .btn--white::after {
+    background-color: #fff; }
 
 .btn::after {
   content: "";
@@ -181,35 +161,113 @@ body {
   top: 0;
   left: 0;
   z-index: -1;
-  transition: all 0.4s;
-}
-
-/* :btn-white" it's a state , style special */
-.btn--white::after {
-  background-color: #fff;
-}
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
-}
+  transition: all 0.4s; }
 
 .btn--animation {
   animation: moveInBotton 0.5s ease-out 0.75s;
-  animation-fill-mode: backwards;
-}
+  animation-fill-mode: backwards; }
 
-.section-2 {
+.btn-text:link, .btn-text:visited {
+  font-size: 1.6rem;
+  color: #7ed56f;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid #7ed56f;
+  padding: 3px; }
+
+.btn-text:hover {
+  background-color: #7ed56f;
+  color: #fff;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px); }
+
+.btn-text:active {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transform: translateY(0); }
+
+.composition {
+  position: relative; }
+  .composition__photo {
+    width: 75%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+    transition: all 0.2s;
+    outline-offset: 2rem; }
+    .composition__photo--p1 {
+      left: 0;
+      top: -2rem; }
+    .composition__photo--p2 {
+      right: 0;
+      top: 2rem; }
+    .composition__photo--p3 {
+      left: 20%;
+      top: 10rem; }
+    .composition__photo:hover {
+      outline: 1rem solid #bdf3fa;
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+      z-index: 20; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.95); }
+
+.header {
   height: 95vh;
-}
+  background-image: linear-gradient(to right bottom, rgba(189, 243, 250, 0.884), rgba(16, 123, 245, 0.808)), url(../img/kid-enjoying.jpeg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+  /* .logo:hover {
+      animation: moveInRight 1s ease-out;
+    } */ }
+  .header__main-logo {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-main-center {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-55%, -50%);
+    text-align: center; }
 
-.copyrightSection {
-  background-color: #fff;
-  color: #777;
-  padding: 30px 5px;
-  width: 100%;
-}
+/* "top" ensure that the top of the image stays on any viewport size */
+/* "cover" fits the image on any viewport size of the screen  */
+/* vh : hundredths of the viewport height. */
+/* " position relative" is the position reference for the "main-logo and logo" */
+/* "text-align" will center the button 'donate' to the center of the text, treat the button as text */
+/* position absolute   */
+.row {
+  max-width: 144rem;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col"] {
+    float: left; }
+    .row [class^="col"]:not(:last-child) {
+      margin-right: 2rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 2rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 2rem) / 3); }
+  .row .col-2-of-3 {
+    width: calc( 2 * ((100% - 2 * 2rem) / 3) + 2rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 2rem) / 4); }
+  .row .col-2-of-4 {
+    width: calc( 2 * ((100% - 3 * 2rem) / 4) + 2rem); }
+  .row .col-3-of-4 {
+    width: calc( 3 * ((100% - 3 * 2rem) / 4) + 2 2rem); }
 
-.copyrightSection p {
-  margin: 0;
-}
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25rem;
+  margin-top: -15vh; }
